@@ -1,12 +1,14 @@
 package com.lxj.xpopup.core;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
+
 import com.lxj.xpopup.R;
 import com.lxj.xpopup.animator.PopupAnimator;
 import com.lxj.xpopup.animator.ScaleAlphaAnimator;
@@ -29,7 +31,12 @@ public class CenterPopupView extends BasePopupView {
     }
 
     protected void addInnerContent(){
-        contentView = LayoutInflater.from(getContext()).inflate(getImplLayoutId(), centerPopupContainer, false);
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        contentView = getBindingRoot(inflater, centerPopupContainer);
+        if (contentView == null) {
+            contentView = inflater.inflate(getImplLayoutId(), centerPopupContainer, false);
+        }
+
         LayoutParams params = (LayoutParams) contentView.getLayoutParams();
         params.gravity = Gravity.CENTER;
         centerPopupContainer.addView(contentView, params);

@@ -16,6 +16,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -23,6 +24,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
+
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.animator.BlurAnimator;
 import com.lxj.xpopup.animator.EmptyAnimator;
@@ -37,8 +39,10 @@ import com.lxj.xpopup.impl.FullScreenPopupView;
 import com.lxj.xpopup.impl.PartShadowPopupView;
 import com.lxj.xpopup.util.KeyboardUtils;
 import com.lxj.xpopup.util.XPopupUtils;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static com.lxj.xpopup.enums.PopupAnimation.NoAnimation;
 
 /**
@@ -392,6 +396,10 @@ public abstract class BasePopupView extends FrameLayout implements LifecycleObse
      */
     protected int getImplLayoutId() {
         return -1;
+    }
+
+    protected View getBindingRoot(@NonNull LayoutInflater inflater,@NonNull ViewGroup parent) {
+        return null;
     }
 
     /**

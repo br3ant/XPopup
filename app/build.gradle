@@ -43,15 +43,15 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
-    gradle.projectsEvaluated {
-        android.applicationVariants.all { variant ->
-            variant.outputs.all { output ->
-                outputFileName = "XPopup-" + xpopup_version +"-" + new Date().format('yyyyMMdd') + ".apk"
-                // 指定apk生成目录
-                //variant.packageApplication.outputDirectory = new File("./apk")
-            }
-        }
-    }
+//    gradle.projectsEvaluated {
+//        android.applicationVariants.all { variant ->
+//            variant.outputs.all { output ->
+//                outputFileName = "XPopup-" + xpopup_version +"-" + new Date().format('yyyyMMdd') + ".apk"
+//                // 指定apk生成目录
+//                //variant.packageApplication.outputDirectory = new File("./apk")
+//            }
+//        }
+//    }
 }
 
 dependencies {
